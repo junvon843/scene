@@ -13,7 +13,7 @@
 
     <div class="actions">
       <el-switch
-        :model-value="theme.isDark"
+        :model-value="theme.isDark.value"
         inline-prompt
         active-text="暗"
         inactive-text="亮"

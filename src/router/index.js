@@ -20,10 +20,8 @@ const router = createRouter({
     { path: '/scenic/:id', name: 'scenic-detail', component: ScenicDetailPage, props: true },
     { path: '/hot', name: 'hot-articles', component: HotArticleListPage },
     { path: '/hot/:id', name: 'hot-article-detail', component: HotArticleDetailPage, props: true },
-    { path: '/hot:legacyId(\\d+)', redirect: (to) => `/hot/${to.params.legacyId}` },
     { path: '/notes', name: 'notes', component: NotesPage },
     { path: '/notes/:id', name: 'note-detail', component: NoteDetailPage, props: true },
-    { path: '/note:legacyId(\\d+)', redirect: (to) => `/notes/${to.params.legacyId}` },
     { path: '/:pathMatch(.*)*', redirect: '/' }
   ]
 })

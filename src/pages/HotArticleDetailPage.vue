@@ -24,14 +24,14 @@
     </article>
 
     <div class="title-row-between" style="margin-top: 18px;">
-      <el-button @click="router.push('/hot')">返回全部热门文章</el-button>
-      <el-link type="primary" @click="router.push('/')">回到首页</el-link>
+      <el-button @click="goHot">返回全部热门文章</el-button>
+      <el-link type="primary" @click="goHome">回到首页</el-link>
     </div>
   </section>
   <section v-else class="section-block">
     <el-result icon="warning" title="文章不存在" sub-title="该文章可能已下线，请返回热门文章列表。">
       <template #extra>
-        <el-button type="primary" @click="router.push('/hot')">返回全部热门文章</el-button>
+        <el-button type="primary" @click="goHot">返回全部热门文章</el-button>
       </template>
     </el-result>
   </section>
@@ -39,11 +39,13 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { hotArticles } from '../mock/hotdata'
 
 const route = useRoute()
-const router = useRouter()
 
 const article = computed(() => hotArticles.find((item) => item.id === Number(route.params.id)))
+
+const goHot = () => window.location.assign('/hot')
+const goHome = () => window.location.assign('/')
 </script>

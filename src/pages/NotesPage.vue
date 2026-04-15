@@ -1,10 +1,10 @@
-﻿<template>
+<template>
   <section class="section-block">
     <div class="title-row-between">
       <h1>游记专区</h1>
       <el-radio-group v-model="layoutMode" size="small">
-        <el-radio-button label="grid">网格</el-radio-button>
-        <el-radio-button label="masonry">瀑布流</el-radio-button>
+        <el-radio-button value="grid">网格</el-radio-button>
+        <el-radio-button value="masonry">瀑布流</el-radio-button>
       </el-radio-group>
     </div>
 

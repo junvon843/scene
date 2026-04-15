@@ -7,7 +7,6 @@
     <div class="footer-grid">
       <span>热门：海岛 · 雪山 · 古城 · 森林</span>
       <span>主题：景点展示 · 图文游记 · 旅行攻略</span>
-      <span>体验：纯前端静态项目 · 本地交互存储</span>
     </div>
   </footer>
 </template>

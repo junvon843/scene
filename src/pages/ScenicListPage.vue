@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <section class="section-block scenic-list-page">
     <div class="title-row-between">
       <h1>景点探索</h1>
@@ -51,14 +51,13 @@
 
 <script setup>
 import { computed, reactive, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import ScenicCard from '../components/ScenicCard.vue'
 import { regions, scenicCategories, scenicSpots, seasons } from '../mock/data'
 import { useFavoriteIds, useLocalEngagement } from '../composables/useLocalEngagement'
 
 const route = useRoute()
-const router = useRouter()
 
 const filters = reactive({
   keyword: route.query.q || '',
@@ -105,7 +104,7 @@ watch([() => filters.keyword, () => filters.region, () => filters.type, () => fi
   page.value = 1
 })
 
-const goDetail = (id) => router.push(`/scenic/${id}`)
+const goDetail = (id) => window.location.assign(`/scenic/${id}`)
 const onLike = (id) => {
   likeMap[id].toggleLike()
   ElMessage.success('点赞状态已更新')
